@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>find max-min in array</title>
+</head>
+<body>
+    <script>
+        function findMinInArray(arr) {
+            let min=arr[0];
+            for (let i=1;i<arr.length;i++) {
+                if (arr[i]<min){ min=arr[i]}
+            }
+            return min;
+        }
+        function findMaxInArray(arr) {
+            let max=arr[0];
+            for (let i=1;i<arr.length;i++) {
+                if (arr[i]>max){ max=arr[i]}
+            }
+            return max;
+        }
+        function dispArr(arr) {
+            let t=0;
+            for (let i=0;i<arr.length;i++){
+                document.write(arr);
+            }
+        }
+
+        function myArray() {
+            let myArr=[];
+            for (let i=0;i<100;i++){
+                myArr[i]=Math.floor(Math.random()*100);
+                
+            }
+            dispArr(myArr);
+            document.write("<br/>");
+            document.write("Max la: "+ findMaxInArray(myArr));
+            document.write("<br/>");
+            document.write("Min la: "+ findMinInArray(myArr));
+
+
+
+
+        }
+        myArray();
+
+    </script>
+</body>
+</html>
