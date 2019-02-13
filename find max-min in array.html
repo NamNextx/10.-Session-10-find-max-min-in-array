@@ -5,6 +5,8 @@
     <title>find max-min in array</title>
 </head>
 <body>
+    <input type="number" id="idInput">
+    <input type="button" value="Count" onclick="myArray()">
     <script>
         function findMinInArray(arr) {
             let min=arr[0];
@@ -26,24 +28,40 @@
                 document.write(arr);
             }
         }
+        function seqSearch(arr, data) {
+            let count=0
+            for (var i = 0; i < arr.length; ++i) {
+                if (arr[i] == data) {
+                    count++;
+                }
+            }
+            return count;
+
+        }
 
         function myArray() {
+            let data=parseInt(document.getElementById("idInput").value);
+
             let myArr=[];
             for (let i=0;i<100;i++){
                 myArr[i]=Math.floor(Math.random()*100);
                 
             }
+            let count;
+            count=seqSearch(myArr,data);
+
             dispArr(myArr);
             document.write("<br/>");
             document.write("Max la: "+ findMaxInArray(myArr));
             document.write("<br/>");
             document.write("Min la: "+ findMinInArray(myArr));
+            document.write('Count your number: '+count);
 
 
 
 
         }
-        myArray();
+
 
     </script>
 </body>
